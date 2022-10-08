@@ -2,12 +2,12 @@ version: '2.4'
 
 services:
   octoprint:
-    image: custom-image
+    image: fischerfelix/octoprint-dynamic-usb
     restart: unless-stopped
     ports:
       - 80:80
     devices:
-      - /dev/ttyACM0:/dev/ttyACM0
+      - /dev/bus/usb
     #  - /dev/video0:/dev/video0
     volumes:
       - /run/udev:/run/udev:ro
