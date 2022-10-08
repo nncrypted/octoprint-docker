@@ -1,5 +1,7 @@
 # OctoPrint-docker [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.octoprint.org)
 
+# The Docker image for this repository can be found under https://github.com/fischer-felix/docker-images
+
 This is the primary image of `octoprint/octoprint`. It is designed to work similarly, and support the same out of the box features as the octopi raspberry-pi machine image, using docker.
 
 The `octoprint/octoprint` image uses semantic versioning, but the tags for `octoprint/octoprint` follow the version of octoprint contained in the image. As a result we recommend you always check the [CHANGELOG](CHANGELOG.md) or [Releases](https://github.com/OctoPrint/octoprint-docker/releases) before pulling an image, _even if you are pulling the same tag_.
