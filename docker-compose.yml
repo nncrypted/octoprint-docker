@@ -2,16 +2,18 @@ version: '2.4'
 
 services:
   octoprint:
-    image: octoprint/octoprint
+    image: custom-image
     restart: unless-stopped
     ports:
       - 80:80
-    # devices:
-    # use `python -m serial.tools.miniterm` to see what the name is of the printer, this requires pyserial
-    #  - /dev/ttyACM0:/dev/ttyACM0
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0
     #  - /dev/video0:/dev/video0
     volumes:
-     - octoprint:/octoprint
+      - /run/udev:/run/udev:ro
+      - octoprint:/octoprint
+    device_cgroup_rules:
+      - 'c 188:* rmw'
     # uncomment the lines below to ensure camera streaming is enabled when
     # you add a video device
     #environment:
