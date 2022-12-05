@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install -y \
   g++ \
   git \
   haproxy \
+  libpq-dev \
   libffi-dev \
   libjpeg-dev \
   libjpeg62-turbo \
@@ -45,7 +46,8 @@ RUN apt-get update && apt-get install -y \
   v4l-utils \
   xz-utils \
   zlib1g-dev \
-  x265
+  x265 \
+  && pip install psycopg2-binary
 
 # unpack s6
 COPY --from=s6build /tmp /tmp
